@@ -1,3 +1,4 @@
+import 'package:animated_pageview_builder/models/cacheNetworkImageModel.dart';
 import 'package:animated_pageview_builder/models/locationsModel.dart';
 import 'package:flutter/material.dart';
 
@@ -43,9 +44,8 @@ class _ImageWidgetState extends State<ImageWidget> {
     return SizedBox.expand(
       child: ClipRRect(
         borderRadius: const BorderRadius.all(Radius.circular(8)),
-        child: Image.network(
+        child: cachedNetworkImage(
           widget.location.images!,
-          fit: BoxFit.cover,
         ),
       ),
     );
